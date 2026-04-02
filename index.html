@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentCollab - Learn Together, Grow Together</title>
+    <meta name="description"
+        content="A student collaboration platform to ask questions, help others, and build a learning community.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="nav-content container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✨</span>
+                StudentCollab
+            </a>
+            <div class="nav-links">
+                <a href="questions.html" class="nav-link">Questions</a>
+                <a href="ask.html" class="nav-link btn-primary-outline">Ask Question</a>
+
+                <div class="user-stats">
+                    <span class="rep-badge">
+                        <span class="rep-icon">🏆</span>
+                        <span id="nav-rep-score">0</span>
+                    </span>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon" style="display: none;">🌙</span>
+                    </button>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <div class="badge">🎉 Welcome to the community</div>
+                <h1 class="hero-title">
+                    Learn Together,<br>
+                    <span class="gradient-text">Grow Together.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    The modern collaboration platform built specifically for students. Ask doubts, share knowledge, and
+                    build your reputation within your learning community.
+                </p>
+                <div class="hero-actions">
+                    <a href="ask.html" class="btn btn-primary">Ask a Question</a>
+                    <a href="questions.html" class="btn btn-secondary">Browse Discussions</a>
+                </div>
+            </div>
+            <div class="hero-graphic">
+                <div class="floating-cards">
+                    <div class="float-card card-1 glass">
+                        <div class="float-header">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        </div>
+                        <div class="float-body">
+                            <div class="skeleton-line w-80"></div>
+                            <div class="skeleton-line w-60"></div>
+                        </div>
+                    </div>
+                    <div class="float-card card-2 glass">
+                        <div class="float-body skeleton-flex">
+                            <div class="avatar-sm"></div>
+                            <div class="skeleton-line flex-grow"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section class="login-section container" id="login-section" style="display: none;">
+            <div class="glass"
+                style="padding: 40px; max-width: 500px; margin: 0 auto; border-radius: var(--radius-lg);">
+                <h2 style="text-align: center; margin-bottom: 24px;">Join the Community</h2>
+                <form id="home-login-form">
+                    <div class="form-group">
+                        <input type="email" id="home-login-email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="home-login-password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                </form>
+                <p style="text-align: center; margin: 16px 0;">Don't have an account? <a href="#"
+                        id="home-show-signup">Sign up</a></p>
+                <form id="home-signup-form" style="display: none;">
+                    <div class="form-group">
+                        <input type="text" id="home-signup-name" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="home-signup-email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="home-signup-password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                </form>
+                <p style="text-align: center;"><a href="#" id="home-show-login">Back to Login</a></p>
+            </div>
+        </section>
+
+        <!-- Featured Questions -->
+        <section class="featured-section container">
+            <div class="section-header">
+                <h2>Trending Discussions</h2>
+                <a href="questions.html" class="view-all">View all ➔</a>
+            </div>
+
+            <div class="questions-grid" id="featured-questions-container">
+                <!-- Questions injected by JS -->
+                <!-- Example Skeleton loaders while fetching -->
+                <div class="question-card glass skeleton-wrapper">
+                    <div class="skeleton-line w-100 skeleton-title"></div>
+                    <div class="skeleton-line w-90"></div>
+                    <div class="skeleton-line w-70"></div>
+                    <div class="card-footer mt-auto">
+                        <div class="skeleton-tag"></div>
+                        <div class="skeleton-metrics"></div>
+                    </div>
+                </div>
+                <div class="question-card glass skeleton-wrapper">
+                    <div class="skeleton-line w-100 skeleton-title"></div>
+                    <div class="skeleton-line w-80"></div>
+                    <div class="skeleton-line w-80"></div>
+                    <div class="card-footer mt-auto">
+                        <div class="skeleton-tag"></div>
+                        <div class="skeleton-metrics"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 StudentCollab. A platform for learners.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Page specific initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            app.initHomePage();
+        });
+    </script>
+</body>
+
+</html>

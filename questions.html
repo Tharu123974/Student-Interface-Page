@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Questions - StudentCollab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-content container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✨</span>
+                StudentCollab
+            </a>
+            <div class="nav-links">
+                <a href="questions.html" class="nav-link">Questions</a>
+                <a href="ask.html" class="nav-link btn-primary-outline">Ask Question</a>
+                
+                <div class="user-stats">
+                    <span class="rep-badge">
+                        <span class="rep-icon">🏆</span>
+                        <span id="nav-rep-score">0</span>
+                    </span>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon" style="display: none;">🌙</span>
+                    </button>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="page-container" style="max-width: var(--max-width);">
+        <div class="page-header">
+            <h1 style="font-size: 2.25rem;">All Questions</h1>
+            <a href="ask.html" class="btn btn-primary">Ask a Question</a>
+        </div>
+        
+        <div class="filters-bar glass" style="padding: 16px 24px; border-radius: var(--radius-md);">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" class="form-control search-input" placeholder="Search for keywords...">
+            </div>
+            <div class="topic-filters">
+                <button class="filter-btn active" data-topic="all">All Topics</button>
+                <button class="filter-btn" data-topic="dsa">DSA</button>
+                <button class="filter-btn" data-topic="dbms">DBMS</button>
+                <button class="filter-btn" data-topic="os">OS</button>
+                <button class="filter-btn" data-topic="math">Math</button>
+                <button class="filter-btn" data-topic="general">General</button>
+            </div>
+        </div>
+
+        <div class="questions-grid" id="all-questions-container">
+            <!-- Simulated Skeleton Loaders -->
+            <div class="question-card glass skeleton-wrapper">
+                <div class="skeleton-line w-100 skeleton-title"></div>
+                <div class="skeleton-line w-90"></div>
+                <div class="skeleton-line w-70"></div>
+                <div class="card-footer mt-auto">
+                    <div class="skeleton-tag"></div>
+                    <div class="skeleton-metrics"></div>
+                </div>
+            </div>
+            <div class="question-card glass skeleton-wrapper">
+                <div class="skeleton-line w-100 skeleton-title"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="card-footer mt-auto">
+                    <div class="skeleton-tag"></div>
+                    <div class="skeleton-metrics"></div>
+                </div>
+            </div>
+            <div class="question-card glass skeleton-wrapper">
+                <div class="skeleton-line w-100 skeleton-title"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="card-footer mt-auto">
+                    <div class="skeleton-tag"></div>
+                    <div class="skeleton-metrics"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 StudentCollab. A platform for learners.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            app.initQuestionsPage();
+        });
+    </script>
+</body>
+</html>

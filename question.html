@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Details - StudentCollab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="nav-content container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✨</span>
+                StudentCollab
+            </a>
+            <div class="nav-links">
+                <a href="questions.html" class="nav-link">Questions</a>
+                <a href="ask.html" class="nav-link btn-primary-outline">Ask Question</a>
+
+                <div class="user-stats">
+                    <span class="rep-badge">
+                        <span class="rep-icon">🏆</span>
+                        <span id="nav-rep-score">0</span>
+                    </span>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="sun-icon">Light Mode</span>
+                        <span class="moon-icon" style="display: none;">Dark Mode</span>
+                    </button>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="page-container" style="max-width: 900px; padding: 0 24px;">
+        <div id="question-detail-container" class="glass" style="padding: 40px; border-radius: var(--radius-lg);">
+            <div class="skeleton-wrapper">
+                <div class="skeleton-line skeleton-title" style="height: 36px;"></div>
+                <div class="skeleton-line w-80 skeleton-title" style="height: 36px; margin-bottom: 24px;"></div>
+
+                <div style="display: flex; gap: 16px; margin-bottom: 40px;">
+                    <div class="skeleton-tag"></div>
+                    <div class="skeleton-tag"></div>
+                    <div class="skeleton-tag"></div>
+                </div>
+
+                <div class="skeleton-line w-100"></div>
+                <div class="skeleton-line w-100"></div>
+                <div class="skeleton-line w-90"></div>
+                <div class="skeleton-line w-80"></div>
+                <div class="skeleton-line w-100 mt-auto" style="margin-top: 24px;"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 80px;">
+        <div class="container footer-content">
+            <p>&copy; 2026 StudentCollab. A platform for learners.</p>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                app.initQuestionDetailPage();
+            }, 600);
+        });
+    </script>
+</body>
+
+</html>

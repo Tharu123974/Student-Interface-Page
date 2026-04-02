@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Question - StudentCollab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-content container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✨</span>
+                StudentCollab
+            </a>
+            <div class="nav-links">
+                <a href="questions.html" class="nav-link">Questions</a>
+                <a href="ask.html" class="nav-link btn-primary-outline">Ask Question</a>
+                
+                <div class="user-stats">
+                    <span class="rep-badge" title="Your Reputation Points">
+                        <span class="rep-icon">🏆</span>
+                        <span id="nav-rep-score">0</span>
+                    </span>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon" style="display: none;">🌙</span>
+                    </button>
+                    <div class="avatar">S</div>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="page-container" style="max-width: 700px;">
+        <div class="glass" style="padding: 40px; border-radius: var(--radius-lg);">
+            <div style="margin-bottom: 24px;">
+                <div class="badge">Earn +5 Rep</div>
+                <h1 style="font-size: 2.25rem; font-weight: 700; color: var(--text-main); line-height: 1.2; margin-bottom: 8px;">Ask a Question</h1>
+                <p style="color: var(--text-muted);">Provide a clear title, select the appropriate topic, and describe your doubt in detail to get the best help from the community.</p>
+            </div>
+            
+            <form id="ask-form">
+                <div class="form-group">
+                    <label class="form-label" for="q-title">Title</label>
+                    <input type="text" id="q-title" class="form-control" required placeholder="e.g. How to reverse a linked list in O(n) time?" minlength="10" maxlength="150">
+                    <small style="color: var(--text-muted); font-size: 0.8rem; margin-top: 6px; display: block;">Be specific and imagine you're asking a question to another person.</small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="q-topic">Topic</label>
+                    <select id="q-topic" class="form-control" required>
+                        <option value="" disabled selected>Select a topic...</option>
+                        <option value="dsa">Data Structures & Algorithms (DSA)</option>
+                        <option value="dbms">Database Management (DBMS)</option>
+                        <option value="os">Operating Systems (OS)</option>
+                        <option value="math">Mathematics</option>
+                        <option value="general">General / Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="q-body">Details</label>
+                    <textarea id="q-body" class="form-control" required placeholder="Include all the information someone would need to answer your question...
+                    
+- What have you tried so far?
+- Any specific error messages?
+- What is your expected output?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.05rem;">Post Your Question</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 StudentCollab. A platform for learners.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            app.initAskPage();
+        });
+    </script>
+</body>
+</html>
